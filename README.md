@@ -13,3 +13,16 @@
 | linaria            | 6.2.0   | Copyright (c) 2017 Callstack                                      |
 | react-hook-form    | 7.53.0  | Copyright (c) 2019-present Beier(Bill) Luo                        |
 | react-helmet-async | 2.0.5   | -                                                                 |
+
+## husky + lint-staged
+
+| Library     | Version |
+| ----------- | ------- |
+| husky       | 9.1.5   |
+| lint-staged | 15.2.9  |
+
+### Setup
+
+```bash
+npm run prepare
+```
