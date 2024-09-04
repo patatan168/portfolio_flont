@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2022: true },
+  env: { browser: true, es2023: true },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -13,7 +13,7 @@ module.exports = {
   ignorePatterns: ['dist', 'node_modules', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: '2022',
+    ecmaVersion: '2023',
     ecmaFeatures: {
       jsx: true,
     },
