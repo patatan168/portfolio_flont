@@ -77,8 +77,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "npm run lint:precommit",
-    "src/**/*.{ts,tsx,json,css,scss}": "npm run fmt:precommit"
+    "src/**/*.{ts,tsx}": "npm run lint",
+    "src/**/*.{ts,tsx,json,css,scss}": "npm run fmt"
   },
   "volta": {
     "node": "20.15.0",
