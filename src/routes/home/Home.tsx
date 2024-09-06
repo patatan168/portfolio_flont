@@ -77,7 +77,7 @@ const CarrerTimeline = () => {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          2015.3. <br />
+          2014.3. <br />
           <Link href="https://www.metro.ed.jp/tamakagakugijutsu-h/">
             東京都立多摩科学技術高等学校
           </Link>
