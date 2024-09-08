@@ -8,7 +8,7 @@
     "dev": "vite",
     "start": "vite --host",
     "build": "tsc && vite build",
-    "lint": "eslint .",
+    "lint": "eslint **/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{css,scss,json,md,ts,tsx}",
     "preview": "vite preview",
     "prepare": "husky",
@@ -81,7 +81,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "npm run lint",
-    "src/**/*.{ts,tsx,json,css,scss}": "npm run fmt"
+    "**/*.{css,scss,json,md,ts,tsx}": "npm run fmt"
   },
   "volta": {
     "node": "20.15.0",
