@@ -17,7 +17,7 @@ const HeadBlock = ({ title, description, path }: HeadProps) => {
   const hostname = window.location.hostname;
   return (
     <Helmet>
-      <title>{`${title} | ${MainTitle}` ?? MainTitle}</title>
+      <title>{title !== undefined ? `${title} | ${MainTitle}` : MainTitle}</title>
       <meta name="description" content={description ?? 'デフォルトの説明文です'} />
       <link rel="canonical" href={`https://${hostname}/${path ?? ''}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
