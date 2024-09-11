@@ -210,7 +210,17 @@ const UserList = () => {
   );
 
   const handleDelete = (uuid: string) => {
-    return () => deleteUser(uuid);
+    return (formEvent: React.FormEvent) => {
+      const result = confirm('本当に削除しますか？');
+      if (result) {
+        deleteUser(uuid);
+      } else {
+        /** Formイベントを実施しない
+         * @note フォームイベントによりページの更新を抑制
+         */
+        formEvent.preventDefault();
+      }
+    };
   };
 
   const visibleRows = useMemo(
