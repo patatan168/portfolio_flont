@@ -2,6 +2,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import MenuIcon from '@mui/icons-material/Menu';
+import NotesIcon from '@mui/icons-material/Notes';
 import {
   AppBar,
   Box,
@@ -70,8 +71,27 @@ const MenuList = memo(function _MenuList({ open, toggle }: MenuListProps) {
     return (
       <List>
         <ListItem disablePadding>
-          <ListItemButton component="a" href="/login/blog/post">
+          <ListItemButton component="a" href="/login/blog/edit">
             <EditNoteIcon />
+            <ListItemText
+              primary="Blog Edit"
+              sx={{ pl: 1 }}
+              primaryTypographyProps={{
+                fontSize: 22,
+              }}
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    );
+  };
+
+  const BlogPostList = () => {
+    return (
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="/login/blog/post">
+            <NotesIcon />
             <ListItemText
               primary="Blog Post"
               sx={{ pl: 1 }}
@@ -109,7 +129,9 @@ const MenuList = memo(function _MenuList({ open, toggle }: MenuListProps) {
       <Box sx={{ width: 280 }} role="presentation">
         <CloseList />
         <Divider />
+        <BlogPostList />
         <BlogEditList />
+        <Divider />
         <UserManagerList />
       </Box>
     </Drawer>
