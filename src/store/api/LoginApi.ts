@@ -24,6 +24,7 @@ export const {
   usePostBlogMutation,
   useGetBlogQuery,
   useGetBlogEntryQuery,
+  useGetEditBlogQuery,
 } = LoginApi;
 
 export default LoginApi;

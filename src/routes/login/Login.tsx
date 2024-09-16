@@ -14,7 +14,7 @@ const Login = () => {
   const [updatePost] = usePostLoginMutation();
 
   if (data !== undefined && data && isSuccess) {
-    return <Navigate replace to="/login/blog/post" />;
+    return <Navigate replace to="/login/blog/edit" />;
   }
 
   return (

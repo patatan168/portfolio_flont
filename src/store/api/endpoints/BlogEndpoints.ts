@@ -5,6 +5,7 @@ const blog = 'blog/';
 const blogUrl = {
   get: blog + 'get',
   getEntry: blog + 'get-entry',
+  editGet: blog + 'get-edit',
   post: blog + 'post',
   put: blog + 'put',
   delete: blog + 'delete',
@@ -38,6 +39,18 @@ export const BlogEndpoint = (builder: EndpointBuilder<BaseQueryFn, string, strin
     }),
     getBlogPager: builder.query<BlogDict, string>({
       query: (time: string) => `${blogUrl.get}/${time}`,
+    }),
+    getEditBlog: builder.query<BlogDict, void>({
+      query: () => blogUrl.editGet,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ uuid }) => ({ type: 'GetBlog', uuid })),
+              // postBlogがあったときのために特別なタグを用意する。
+              { type: 'GetBlog', id: 'LIST' },
+            ]
+          : // エラーがあった場合でもユーザ追加をしたタイミングで再データ取得をする。
+            [{ type: 'GetBlog', id: 'LIST' }],
     }),
     getBlogEntry: builder.query<BlogDict, string>({
       query: (path: string) => `${blogUrl.getEntry}/${path}`,

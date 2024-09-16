@@ -13,6 +13,8 @@ const Blog = lazy(() => import('./routes/blog/Blog'));
 const BlogEntry = lazy(() => import('./routes/blogEntry/BlogEntry'));
 const Login = lazy(() => import('./routes/login/Login'));
 const BlogPost = lazy(() => import('./routes/login/blogPost/BlogPost'));
+const BlogEdit = lazy(() => import('./routes/login/blogEdit/BlogEdit'));
+const BlogPut = lazy(() => import('./routes/login/blogPut/BlogPut'));
 const Page404 = lazy(() => import('./routes/Page404'));
 const Page401 = lazy(() => import('./routes/login/Page401'));
 const UserManager = lazy(() => import('./routes/login/user/UserManager'));
@@ -70,6 +72,8 @@ const ReactRoutes = () => {
               <Route index element={<Login />} />
               <Route path="/login/page401" element={<Page401 />} />
               <Route path="/login/blog/post" element={<BlogPost />} />
+              <Route path="/login/blog/edit" element={<BlogEdit />} />
+              <Route path="/login/blog/edit/*" element={<BlogPut />} />
               <Route path="/login/user" element={<UserManager />} />
             </Route>
           </Routes>
