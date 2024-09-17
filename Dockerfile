@@ -1,4 +1,4 @@
-FROM node:20.15-alpine3.19 AS builder
+FROM node:20.17-alpine3.19 AS builder
 # 作業ディレクトリの設定
 WORKDIR /FrontEnd
 # すべてのファイルをコピーする
