@@ -10,6 +10,7 @@
     "build": "tsc && vite build",
     "lint": "eslint **/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{css,scss,json,md,ts,tsx}",
+    "fmt-check": "prettier --check **/*.{css,scss,json,md}",
     "preview": "vite preview",
     "prepare": "husky",
     "ncu-upd": "ncu -u"

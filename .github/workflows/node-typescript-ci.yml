@@ -1,4 +1,4 @@
-name: Node TypeScript CI
+name: Node (Lint + Format) CI
 
 on: pull_request
 
@@ -10,11 +10,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+
+      - name: Install Dependency
+        run: npm ci
+
+      - name: Lint & Format
+        run: |
+          npm run lint
+          npm run fmt-check
+
+      - name: Build
+        run: npm run build
