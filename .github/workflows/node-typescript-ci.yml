@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   build_and_test:
-    name: Build and test
+    name: Build and Test(Lint & UnitTest)
     runs-on: ubuntu-latest
 
     steps:
