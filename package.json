@@ -13,7 +13,7 @@
     "fmt-check": "prettier --check **/*.{css,scss,json,md}",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest",
+    "test": "TZ=Asia/Tokyo vitest",
     "ncu-upd": "ncu -u"
   },
   "dependencies": {
