@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   build_and_test:
-    name: Build and test
+    name: Build and Test(Lint & UnitTest)
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,9 @@ jobs:
         run: |
           npm run lint
           npm run fmt-check
+
+      - name: Vitest
+        run: npm run test
 
       - name: Build
         run: npm run build
