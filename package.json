@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint **/*.{ts,tsx}",
+    "lint": "npm run lint:es && npm run lint:style",
+    "lint:es": "eslint **/*.{ts,tsx}",
+    "lint:style": "stylelint --ignore-path .gitignore 'src/**/*.(css|tsx)'",
     "fmt": "prettier --write **/*.{css,scss,json,md,ts,tsx}",
     "fmt-check": "prettier --check **/*.{css,scss,json,md}",
     "preview": "vite preview",
@@ -72,8 +74,13 @@
     "happy-dom": "^15.7.4",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
+    "postcss-styled-syntax": "^0.6.4",
     "prettier-plugin-organize-imports": "^4.1.0",
     "rollup-plugin-visualizer": "^5.12.0",
+    "stylelint": "^16.9.0",
+    "stylelint-config-recommended": "^14.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-prettier": "^5.0.2",
     "terser": "^5.33.0",
     "vite": "^5.4.7",
     "vite-tsconfig-paths": "^5.0.1",
@@ -85,7 +92,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "npm run lint",
+    "src/**/*.{css,ts,tsx}": "npm run lint",
     "**/*.{css,scss,json,md,ts,tsx}": "npm run fmt"
   },
   "volta": {
