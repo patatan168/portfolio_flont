@@ -92,8 +92,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{css,ts,tsx}": "npm run lint",
-    "**/*.{css,scss,json,md,ts,tsx}": "npm run fmt"
+    "src/**/*.{ts,tsx}": "eslint",
+    "src/**/*.{css,tsx}": "stylelint",
+    "**/*.{css,scss,json,md,ts,tsx}": "prettier --write"
   },
   "volta": {
     "node": "20.17.0",
